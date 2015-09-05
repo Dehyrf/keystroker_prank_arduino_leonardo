@@ -1,6 +1,7 @@
 //Presses backspace then space every 30 seconds, by Dehyrf for your amusement under GNU GPL v3
 //To turn on, connect a wire between gnd and digital 4. To turn off/reprogram, disconnect wire.
 
+int setTimeSeconds = 30; //Change to change interval
 const int buttonPin = 4;          // input pin for pushbutton
 int counter = 0;                  // button push counter
 
@@ -20,7 +21,7 @@ void loop() {
     Keyboard.releaseAll();
     Keyboard.write(' ');
     Keyboard.releaseAll();
-    delay(30000);
+    delay(setTimeSeconds * 1000);
   }
 }
 
